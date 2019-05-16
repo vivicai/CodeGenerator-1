@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html {width: 100%;height: 100%; margin:0;font-family:"微软雅黑";}
+        #l-map{height:300px;width:100%;}
+        #r-result,#r-result table{width:100%;}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jsPaQFpsnegF2LguKbwi41KlFY40szuD"></script>
+    <title>驾车导航</title>
+</head>
+<body>
+<input id="searchInput" type="text" placeholder="请输入出发地址" style="width:300px;height: 40px;margin: 8px;" value="天府新谷"/>
+<div id="l-map"></div>
+<div id="r-result"></div>
+</body>
+</html>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("l-map");
+    map.centerAndZoom(new BMap.Point("成都"), 12);
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+    //创建一个自动完成对象
+    var ac = new BMap.Autocomplete({
+        location:map,
+        input:"searchInput"
+    });
+
+
+
+
+    //当鼠标选中下拉列表中的某一条时,地图进行定位
+    ac.addEventListener("onconfirm", function(e) {
+
+        var _value = e.item.value;
+        var myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+
+        var driving = new BMap.DrivingRoute(map, {renderOptions: {map: map, panel: "r-result", autoViewport: true}});
+        driving.search(myValue, "天府新谷");
+
+
+        //地址的获取有两种方式
+        //1 直接获取文本框中的值
+        //2 通过e对象获取出item.value  动态拼接地址
+       /* var _value = e.item.value;
+        var myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        //通过地址进行地图定位
+        // 创建地址解析器实例
+        var myGeo = new BMap.Geocoder();
+        // 将地址解析结果显示在地图上,并调整地图视野
+        myGeo.getPoint(myValue, function(point){
+            if (point) {
+                map.centerAndZoom(point, 16);
+                map.addOverlay(new BMap.Marker(point));
+            }else{
+                alert("您选择地址没有解析到结果!");
+            }
+        }, "北京市");*/
+    });
+
+
+</script>

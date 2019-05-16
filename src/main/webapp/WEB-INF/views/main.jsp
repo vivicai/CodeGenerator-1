@@ -1,0 +1,277 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>--%>
+<%-- 此部分代码做如果项目配置运行时有path的时候使用 --%>
+<%
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" +     request.getServerPort() + request.getContextPath();
+    System.out.println(basePath);
+%>
+<html>
+<head>
+    <base href="<%=basePath%>"/>
+    <title>VR语境交互管理后台 - 主页</title>
+    <%--easyui的暂时不用<%@include file="/WEB-INF/views/common/common.jsp"%>--%>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script  type="text/javascript">
+        $(function(){
+            //ajax获取后台返回的list菜单json数据==================================================================
+            $.ajax({
+                url:"/menu/list",
+                type:"post",
+                dataType:"json",
+                async: false, //改成同步
+                success:function(data){
+                    //json字符串转换成Json数据 eval("("+jsonStr+")") /JSON.parse(jsonStr)
+                    // console.debug(data);
+                    var zqout='';//外层父菜单
+                    for (var i = 0;i<data.length;i++){
+                        var zqin = '';//内层子菜单
+                        for (var j=0;j<data[i].children.length;j++){
+                            var href = data[i].children[j].url;//url跳转路径
+                            var urlTitle = data[i].children[j].text;//点击子菜单过后的选项卡标题
+                            var iconHref = data[i].children[j].icon;//子菜单图标
+                            zqin += '<li><a _href='+href+'><i class="iconfont">'+iconHref+'</i><cite>'+data[i].children[j].name+'</cite></a></li >';
+                        }
+                        var iconHref = data[i].icon;//父菜单图标
+                        zqout += '<li><a href="javascript:;"><i class="iconfont">'+iconHref+'</i><cite>'+data[i].name+'</cite><i class="iconfont nav_right">&#xe697;</i></a><ul class="sub-menu">'+zqin+'</ul></li>';
+                    }
+                    var $link=zqout;
+                    $('.zhengqing_menu').append($link);
+                }
+            });
+
+        })
+    </script>
+    <%-- 注意：这里要放js代码之后！！ --%>
+    <%@ include file="/WEB-INF/views/head.jsp"%>
+</head>
+<body>
+
+<!-- 顶部开始=================================================================================== -->
+<div class="container">
+    <div class="logo"><a href="#">VR语境交互管理后台</a></div>
+    <div class="left_open">
+        <i title="展开左侧栏" class="iconfont">&#xe699;</i>
+    </div>
+    <ul class="layui-nav left fast-add" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="javascript:;">+新增</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+<%--                <dd><a onclick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe6a2;</i>资讯</a></dd>--%>
+<%--                <dd><a onclick="x_admin_show('图片','http://www.baidu.com')"><i class="iconfont">&#xe6a8;</i>图片</a></dd>--%>
+                <dd><a onclick="x_admin_show('添加用户','http://www.baidu.com')"><i class="iconfont">&#xe6b8;</i>添加用户</a></dd>
+            </dl>
+        </li>
+    </ul>
+    <ul class="layui-nav right" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="javascript:;">${userInfo.username}</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
+                <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
+                <dd><a href="/logout">退出</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item to-index"><a href="/static/zq/Z1.html">前台首页</a></li>
+    </ul>
+
+</div>
+<!-- 顶部结束=================================================================================== -->
+
+<!-- 中部开始=================================================================================== -->
+<!-- 左侧菜单开始 -->
+<div class="left-nav">
+    <div id="side-nav">
+        <%-- 这里面放左边菜单栏 --%>
+        <ul id="nav" class="zhengqing_menu">
+        <%--    <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe723;</i>
+                    <cite>订单管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="order-list.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>订单列表</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe723;</i>
+                    <cite>分类管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="cate.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>多级分类</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe723;</i>
+                    <cite>城市联动</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="city.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>三级地区联动</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe726;</i>
+                    <cite>管理员管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="admin-list.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>管理员列表</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="admin-role.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>角色管理</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="admin-cate.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>权限分类</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="admin-rule.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>权限管理</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe6ce;</i>
+                    <cite>系统统计</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="echarts1.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>拆线图</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="echarts2.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>柱状图</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="echarts3.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>地图</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="echarts4.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>饼图</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="echarts5.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>雷达图</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="echarts6.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>k线图</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="echarts7.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>热力图</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="echarts8.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>仪表图</cite>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe6b4;</i>
+                    <cite>图标字体</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="unicode.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>图标对应字体</cite>
+                        </a>
+                    </li>
+                </ul>
+            </li>--%>
+        </ul>
+    </div>
+</div>
+<!-- <div class="x-slide_left"></div> -->
+<!-- 左侧菜单结束 -->
+<!-- 右侧主体开始 -->
+<div class="page-content">
+    <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
+        <ul class="layui-tab-title">
+            <li class="home"><i class="layui-icon">&#xe68e;</i>我的桌面</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <iframe src='/static/X-admin/welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-content-bg"></div>
+<!-- 右侧主体结束 -->
+<!-- 中部结束=================================================================================== -->
+
+<!-- 底部开始=================================================================================== -->
+<div class="footer">
+    <div class="copyright" style="text-align: center">Copyright ©2019 VR语境交互管理后台 v1.0 All Rights Reserved</div>
+</div>
+<!-- 底部结束=================================================================================== -->
+<%--<script>
+    //百度统计可去掉
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>--%>
+
+<!--_footer 作为公共模版分离出去-->
+<%@ include file="/WEB-INF/views/footer.jsp"%>
+</body>
+</html>

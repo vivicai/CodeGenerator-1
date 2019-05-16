@@ -1,0 +1,1006 @@
+*{              /**代表先去掉全部格式，再由自己定义格式*/
+    margin:0;
+    padding: 0;
+}
+.nav{       /*定义div中class属性（class只有一个 .定义）*/
+    width: 100%;
+    height: 50px;
+    background: black;
+}
+#logo{       /*定义div中id中的logo属性（多个id，多个#定义）*/
+    width:135px;
+    height:27px;
+                 /*border: 5px solid red;*/
+    position:absolute;   /*position定义绝对定位*/
+    left: 100px;
+    top:20px;
+    background: url("image/logo.png");
+
+}
+.navUl>li{      /*元素选择器*/
+    float: left;    /*浮动*/
+    list-style: none;   /*去掉ul无序列表中的.*/
+
+    padding: 28px 25px 0px 0px;   /*设置内边距属性（上右下左 1个代表全部属性 2个分别代表上下 左右）*/
+
+    /*border: 3px solid red;*/
+    color: white;
+    -webkit-transition: all .3s linear; /*(过渡)渐变过程*/
+    cursor: pointer;    /*cursor（光标）定义鼠标移到文字处的光标形状：手指*/
+}
+.navUl>li:hover{
+    color: aqua;
+    /*-webkit-transition: all .3s linear;*/
+}
+.navUl{
+    position: relative;
+    left: 250px;
+}
+.navUl>li:hover{    /*hover定义鼠标移到去掉边框*/
+    color:#6dfffd;
+    border-bottom: 5px solid yellow;        /*border-bottom定义下边框的样式*/
+}
+.navDengLu{
+    color: white;
+    position: absolute;
+    left: 1050px;
+    top:25px;
+    cursor: pointer;
+}
+.navZhuCe{
+    color: white;
+    position: absolute;
+    left: 1150px;
+    top:25px;
+    cursor: pointer;
+}
+.navBtn{
+    position: absolute;
+    left: 1250px;
+    top: 20px;
+    color: brown;
+    background-color: antiquewhite;
+    border-radius: 5px; /*======圆框边=======*/
+    cursor: pointer;
+}
+.navBtn:hover{
+    color: aqua;
+}
+        /*======================================banner开始===================================*/
+.myBannerYeYe{
+    width: 1349px;
+    height: 600px;
+    overflow: hidden;       /*超出部分隐藏###*/
+}
+.myBanner{
+    width: 8094px; /*6张照片的宽*/
+    height: 600px;
+    position: absolute;
+    -webkit-animation: lunBo 15s linear 2s infinite ;
+    /*1动画名字 2持续时间 3把时间平均(匀速) 4等待时间 5无限运用 6反向运动（使轮流）*/
+}
+@-webkit-keyframes lunBo {
+    from{
+        margin-left: 0px;
+    }to{
+         margin-left: -6745px;      /*-5张照片像素 */
+     }
+}
+.myBanner>img{
+    width: 1349px;  /*电脑分辨率像素-浏览器滚动条像素（17px）*/
+    height:600px;
+    float:left;
+}
+/*
+.myBanner{
+    width: 100%;
+    height: auto;
+    border: 1px solid red;
+}.banImg{
+    width: 100%;
+    height: auto;
+}
+*/
+.neiR1{
+    margin-top:50px;
+    margin-left:100px;
+    position:relative;
+}
+.neiR1P1{
+    position:absolute;
+    left:223px;
+    top:65px;
+    font-size:15px;
+}
+.mySpan2{
+    font-size:15px;
+    -webkit-transition:all .3s linear;
+}
+.mySpan2:hover{
+    color:#0F0;
+    font-size:30px;
+}
+.neiR1P2{
+    position:absolute;
+    left:765px;
+    top:65px;
+    font-size:15px;
+}
+.mySpan3{
+    font-size:15px;
+    -webkit-transition:all .3s linear;
+}
+.mySpan3:hover{
+    color:#0F0;
+    font-size:30px;
+}
+.neiR1P3{
+    position:absolute;
+    left:460px;
+    top:230px;
+    font-size:50px;
+}
+.neiR1P4{
+    position:absolute;
+    left:360px;
+    top:300px;
+}
+
+
+/*============================================================================================*/
+.neiR2{
+    width:1124px;
+    height:540px;
+    margin-left:108px;
+    margin-top:160px;
+}
+.neiR2Z{
+    width:562px;
+    height:540px;
+    background-color:#6CF;
+    float:left;
+}
+.neiR2Z1{
+    width:562px;
+    height:180px;
+    position:relative;
+}
+.neiR2Z1h1{
+    color:#FFF;
+    position:absolute;
+    left:80px;
+    top:50px;
+}
+.neiR2Z1p1{
+    color:#FFF;
+    position:absolute;
+    left:130px;
+    top:90px;
+    font-size:16px;
+}
+.neiR2Z1p2{
+    color:#FFF;
+    position:absolute;
+    left:260px;
+    top:55px;
+    font-size:16px;
+}
+.neiR2Z1p3{
+    color:#FFF;
+    position:absolute;
+    left:260px;
+    top:75px;
+    font-size:14px;
+}
+.neiR2Z1su{
+    background-color:#FFF;
+    width:4px;
+    height:60px;
+    position:absolute;
+    left:240px;
+    top:50px;
+    font-size:16px;
+}
+.neiR2Z1Div{
+    position: absolute;
+    width:110px;
+    height:40px;
+    background: white;
+    line-height:40px;
+    text-align: center;
+    color:  #73d8ff;
+    font-size: 35px;
+    left:260px;
+    top:115px;
+}
+.neiR2Z1Div:hover{
+    color: #ffffff;
+    border: 2px solid white;
+    background: #73d8ff;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition:all .3s linear;
+}
+
+/*.neiR2Z1zezhao{*/
+    /*width:562px;*/
+    /*height:180px;*/
+    /*background: black;*/
+    /*-webkit-transition:all .5s linear;*/
+    /*opacity: .6;*/
+/*}*/
+/*.neiR2Z1:hover .neiR2Z1zezhao{      /!*空格代表选择 可多选  >只能选一个 *!/*/
+    /*opacity: 0;     /!*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*!/*/
+/*}*/
+
+
+/*========================================================*/
+.neiR2Z2{
+    width:281px;
+    height:180px;
+    background:url(image/zuo%201.jpg);
+    float:left;
+    position:relative;
+}
+.neiR2Z2zezhao{
+    width: 281px;
+    height: 180px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR2Z2:hover .neiR2Z2zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮(相当于抹掉遮罩层 显示原背景图)*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+
+.neiR2Z2>p{
+    color:#FFF;
+    position:absolute;
+    left:10px;
+    top:140px;
+    font-size:14px;
+    -webkit-transition: all .5s linear;
+}
+.neiR2Z2:hover .neiR2Z2p1{
+    position: absolute;
+    top: 100px;
+}
+/*========================================================*/
+
+
+.neiR2Z3{
+    width:281px;
+    height:180px;
+    background-image:url(image/zuo%202.jpg);
+    float:left;
+    position:relative;
+}
+.neiR2Z3zezhao{
+    width: 281px;
+    height: 180px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR2Z3:hover .neiR2Z3zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+
+.neiR2Z3>p{
+    color:#FFF;
+    position:absolute;
+    left:10px;
+    top:140px;
+    font-size:16px;
+    -webkit-transition: all .5s linear;
+}
+.neiR2Z3:hover .neiR2Z3p1{
+    position: absolute;
+    top: 100px;
+}
+
+
+/*=============================================================*/
+.neiR2Z4{
+    width:281px;
+    height:180px;
+    background:url(image/zuo%203.jpg);
+    float:left;
+    position:relative;
+}
+.neiR2Z4zezhao{
+    width: 281px;
+    height: 180px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR2Z4:hover .neiR2Z4zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+.neiR2Z4>p{
+    color:#FFF;
+    position:absolute;
+    left:10px;
+    top:140px;
+    font-size:14px;
+    -webkit-transition: all .5s linear;
+}
+.neiR2Z4:hover .neiR2Z4p1{
+    position: absolute;
+    top: 100px;
+}
+
+/*=================================================*/
+.neiR2Z5{
+    width:281px;
+    height:180px;
+    background-image:url(image/zuo%204.jpg);
+    float:left;
+    position:relative;
+}
+.neiR2Z5zezhao{
+    width: 281px;
+    height: 180px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR2Z5:hover .neiR2Z5zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+.neiR2Z5>p{
+    color:#FFF;
+    position:absolute;
+    left:10px;
+    top:140px;
+    font-size:16px;
+    -webkit-transition: all .5s linear;
+}
+.neiR2Z5:hover .neiR2Z5p1{
+    position: absolute;
+    top: 100px;
+}
+/*======================================================================================================*/
+.neiR2You{
+    width:562px;
+    height:540px;
+    background-color:#FF0;
+    float:left;
+}
+/*========================================*/
+.neiR2You1{
+    width:562px;
+    height:360px;
+    background-image:url(image/you1.jpg);
+    float:left;
+    position:relative;
+}
+.neiR2You1zezhao{
+    width:562px;
+    height:360px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR2You1:hover .neiR2You1zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+
+
+#kuang{
+    width: 370px;
+    height: 150px;
+    /*border: 2px solid aliceblue;*/
+    position: absolute;
+    top: 104px;
+    left: 94px;
+}
+#kuang:hover{
+    -webkit-transform: scale(1.5,2.36); /*乘以宽高陪数*/
+    -webkit-transition: all 3s linear;
+    border: 2px solid aliceblue;
+}
+.neiR2You1P1{
+    position:absolute;
+    color:#FFF;
+    left:106px;
+    top:140px;
+    font-size:20px;
+    -webkit-transition: all 3s linear;
+}
+.neiR2You1:hover .neiR2You1P1{
+    top:50px;
+}
+.neiR2You1P2{
+    background: deepskyblue;
+    position:absolute;
+    left:220px;
+    top:200px;
+    color: #FFFFFF;
+    font-size:18px;
+    border:1px solid #6F0;
+    -webkit-transition: all 3s linear;
+}
+.neiR2You1:hover .neiR2You1P2{
+    position: absolute;
+    color: #6dfffd;
+    font-size:28px;
+    top:100px;
+}
+.neiR2You1:hover .neiR2You1p1{
+    position: absolute;
+    top: 100px;
+}
+
+
+
+
+/*======================================================================================================*/
+.neiR2You2{
+    width:281px;
+    height:180px;
+    background-image:url(image/you2.jpg);
+    float:left;
+    position:relative;
+}
+.neiR2You2zezhao{
+    width:281px;
+    height:180px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR2You2:hover .neiR2You2zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+.neiR2You2>p{
+    color:#FFF;
+    position:absolute;
+    left:10px;
+    top:140px;
+    font-size:16px;
+    -webkit-transition: all .5s linear;
+}
+.neiR2You2:hover .neiR2You2p1{
+    position: absolute;
+    top: 100px;
+}
+.neiR2You3{
+    width:281px;
+    height:180px;
+    background-image:url(image/you3.jpg);
+    float:left;
+    position:relative;
+}
+.neiR2You3zezhao{
+    width:281px;
+    height:180px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR2You3:hover .neiR2You3zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+.neiR2You3>p{
+    color:#FFF;
+    position:absolute;
+    left:10px;
+    top:140px;
+    font-size:16px;
+    -webkit-transition: all .5s linear;
+}
+.neiR2You3:hover .neiR2You3p1{
+    position: absolute;
+    top: 100px;
+}
+/*=========================================*/
+.w{
+    top: 10px;
+    position:relative;
+    width:1100px;
+    height:170px;
+    left:120px;
+    background: beige;
+}
+.w1{
+    color: #FFFFFF;
+    position:absolute;
+    top:40px;
+    left:350px;
+    font-size:30px;
+}
+.w1p1{
+    color:#FFF;
+    position:absolute;
+    left:370px;
+    font-size:20px;
+    top:80px;
+}
+.w1p2{
+    color:#FFF;
+    position:absolute;
+    left:600px;
+    font-size:20px;
+    top:30px;
+}
+.w1p3{
+    color:#FFF;
+    position:absolute;
+    left:600px;
+    font-size:20px;
+    top:80px;
+}
+.w1su{
+    background-color:#FFF;
+    width:4px;
+    height:80px;
+    position:absolute;
+    left:540px;
+    top:35px;
+    font-size:16px;
+}
+.w1p4{
+    color:  #73d8ff;
+    font-size:35px;
+    width:110px;
+    height:40px;
+    background-color:#FFF;
+    position:absolute;
+    left:600px;
+    top:115px;
+}
+.w1p4:hover{
+    width:150px;
+    height:60px;
+    font-size:45px;
+    -webkit-transition:all .3s linear;
+    color: #ffffff;
+    border: 2px solid white;
+    background: #73d8ff;
+    border-radius: 10px;
+    /*-webkit-transform: scale(0,1) rotate(360deg);     */
+}
+
+
+
+/*=========================内容3==============================================*/
+.neiR3{
+    top: 20px;
+    left: 117px;
+    /*border: 5px solid deepskyblue;*/
+    width:1146px;
+    height:560px;
+    position:relative;
+}
+
+.neiR3d1{
+    /*border: 1px solid red;*/
+    width:380px;
+    height:270px;
+    float:left;
+}
+.neiR3d1zezhao{
+    top: 0px;
+    position: absolute;
+    width:360px;
+    height:230px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR3d1:hover .neiR3d1zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+.neiR3d2{
+    /*border: 1px solid red;*/
+    width:380px;
+    height:270px;
+    float:left;
+}
+.neiR3d2zezhao{
+    top: 0px;
+    position: absolute;
+    width:360px;
+    height:230px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR3d2:hover .neiR3d2zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+.neiR3d3{
+    /*border: 1px solid red;*/
+    width:380px;
+    height:270px;
+    float:left;
+}
+.neiR3d3zezhao{
+    top: 0px;
+    position: absolute;
+    width:360px;
+    height:230px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR3d3:hover .neiR3d3zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+.neiR3d4{
+    /*border: 1px solid red;*/
+    width:380px;
+    height:270px;
+    float:left;
+}
+.neiR3d4zezhao{
+    top: 270px;
+    position: absolute;
+    width:360px;
+    height:230px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR3d4:hover .neiR3d4zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+.neiR3d5{
+    /*border: 1px solid red;*/
+    width:380px;
+    height:270px;
+    float:left;
+}
+.neiR3d5zezhao{
+    top: 270px;
+    position: absolute;
+    width:360px;
+    height:230px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR3d5:hover .neiR3d5zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+.neiR3d6{
+    /*border: 1px solid red;*/
+    width:380px;
+    height:270px;
+    float:left;
+}
+.neiR3d6zezhao{
+    top: 270px;
+    position: absolute;
+    width:360px;
+    height:230px;
+    background: black;
+    -webkit-transition:all .5s linear;
+    opacity: .6;
+}
+.neiR3d6:hover .neiR3d6zezhao{      /*空格代表选择 可多选  >只能选一个 */
+    opacity: 0;     /*0代表把设置的遮罩层变为透明  取值范围1~0 越来越亮*/
+    -webkit-transform: scale(0,1) rotate(360deg);     /*旋转遮罩层转*/
+}
+/*-------------------------------------------*/
+.Q{
+    top: 20px;
+    width: 1349px; ;
+    height: 556px;
+    position: relative;
+    left: 117px;
+}
+.Q1{
+    position: absolute;
+    width: 562px;
+    height: 486px;
+    float: left;
+    background: url(image/like1.jpg);
+}
+.Q1Z2{
+    position: absolute;
+    width: 562px;
+    height: 486px;
+    float: left;
+}
+.Q2{
+    position: absolute;
+    left: 562px;
+    float: left;
+}
+.Q2Y1{
+    /*left: 570px;*/
+    /*position: absolute;*/
+    /*left: 562px;*/
+    /*float: left;*/
+    background: url(image/like2.jpg);
+}
+.Q2Y2{
+    position: absolute;
+    /*left: 562px;*/
+    /*top: 242px;*/
+    /*float: left;*/
+    top: 243px;
+    /*border: 2px solid red;*/
+    background: url(image/like3.jpg);
+}
+/*------------------------------------*/
+.Z{
+    width: 1349px;
+    height: 232px;
+    margin-left: 137px;
+    /*top: 50px;*/
+    /*border: 5px solid red;*/
+
+}
+.Z1{
+    position: relative;
+    background:url(image/ys1.jpg);
+    width: 361px;
+    height: 232px;
+    float: left;
+    overflow: hidden;
+    /*超出部分隐藏*/
+}
+.Z1P1>p{
+    position: absolute;
+    left: 76px;
+    top: 30px;
+}
+.Z1P1{
+    position: absolute;
+    top: 0px;/*不能缺少*/
+    left: 0px;/*不能缺少*/
+    width: 361px;
+    height: 232px;
+    color: white;
+    background-color: burlywood;
+    -webkit-transition: all .5s linear;
+}
+.Z1:hover .Z1P1{
+    position: absolute;
+    left: 351px;
+    top: -222px;
+}
+
+.Z2{
+    position: relative;
+    background:url(image/ys2.jpg);
+    float: left;
+    width: 361px;
+    height: 232px;
+    overflow: hidden;
+    /*超出部分隐藏*/
+}
+.Z2P2>p{
+    position: absolute;
+    left: 76px;
+    top: 30px;
+}
+.Z2P2{
+    position: absolute;
+    top: 0px;/*不能缺少*/
+    left: 0px;/*不能缺少*/
+    width: 361px;
+    height: 232px;
+    color: white;
+    background-color: burlywood;
+    -webkit-transition: all .5s linear;
+}
+.Z2:hover .Z2P2{
+    position: absolute;
+    left: 351px;
+    top: -222px;
+}
+
+
+.Z3{
+    position: relative;
+    background:url(image/ys3.jpg);
+    float: left;
+    width: 361px;
+    height: 232px;
+    overflow: hidden;
+    /*超出部分隐藏*/
+}
+.Z3P3>p{
+    position: absolute;
+    left: 76px;
+    top: 30px;
+}
+.Z3P3{
+    position: absolute;
+    top: 0px;/*不能缺少*/
+    left: 0px;/*不能缺少*/
+    width: 361px;
+    height: 232px;
+    color: white;
+    background-color: burlywood;
+    -webkit-transition: all .5s linear;
+}
+.Z3:hover .Z3P3{
+    position: absolute;
+    left: 351px;
+    top: -222px;
+}
+
+
+
+
+
+
+
+/*------------------------------*/
+.F{
+    top: 40px;
+    position: relative;
+    width: 1349px;
+    height: 282px;
+    /*border: 5px solid red;*/
+    background: url(image/foot_banner.jpg);
+    /*top: 300px;*/
+}
+/*.F>img{*/
+    /*position: absolute;*/
+/*}*/
+
+/*=============================结尾========================================*/
+.W{
+    top: 50px;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: black;
+}
+.W1{
+    width: 95%;
+    height: 250px;
+    margin-left: 2%;
+    /*border: 1px  solid red;*/
+    float: left;
+    border-bottom: 1px solid red;
+}
+
+.W1Q1{
+    top: 20px;;
+    width: 38%;
+    height: 200px;
+    /*border: 1px solid yellow;*/
+    position: relative;
+    float: left;
+}
+.W1Q1P1{
+    color: #FFFFFF;
+}
+.W1Q1P2{
+    color: lightslategrey;
+    top: 50px;
+    position: absolute;
+    font-size: 13px;
+}
+/*-------------------------------*/
+.W1Q2{
+    left: 30px;
+    top: 20px;;
+    width: 5%;
+    height: 200px;
+    /*border: 1px solid yellow;*/
+    position: relative;
+    float: left;
+}
+.W1Q2P1{
+    color: #FFFFFF;
+}
+.W1Q2P2{
+    color: lightslategrey;
+    top: 50px;
+    position: absolute;
+    font-size: 13px;
+}
+/*----------------------------*/
+.W1Q3{
+    left: 100px;
+     top: 20px;;
+     width: 5%;
+     height: 200px;
+     /*border: 1px solid yellow;*/
+     position: relative;
+     float: left;
+ }
+.W1Q3P1{
+    color: #FFFFFF;
+}
+.W1Q3P2{
+    color: lightslategrey;
+    top: 50px;
+    position: absolute;
+    font-size: 13px;
+}
+.W1Q4{
+    left: 180px;
+    top: 20px;;
+    width: 7%;
+    height: 200px;
+    /*border: 1px solid yellow;*/
+    position: relative;
+    float: left;
+}
+.W1Q4P1{
+    color: #FFFFFF;
+}
+.W1Q4P2{
+    color: lightslategrey;
+    top: 50px;
+    position: absolute;
+    font-size: 13px;
+}
+.W1Q5{
+    left: 260px;
+    top: 20px;;
+    width: 18%;
+    height: 200px;
+    /*border: 1px solid yellow;*/
+    position: relative;
+    float: left;
+}
+.W1Q5P1{
+    color: #FFFFFF;
+}
+.W1Q5P2{
+    color: lightslategrey;
+    top: 50px;
+    position: absolute;
+    font-size: 13px;
+}
+.W1Q5P3{
+    position: absolute;
+    top: 70px;
+    width: 180px;
+    height: 25px;
+    background-color:lightslategrey ;
+    /*border: 1px solid beige;*/
+}
+.W1Q5P4{
+    color: #FFFFFF;
+    font-size: 30px;
+    position: absolute;
+    top: 60px;
+    left: 200px;
+    width: 65px;
+    height: 40px;
+    background-color: #6dfffd ;
+    /*border: 1px solid beige;*/
+}
+.W2{
+    top: 250px;
+    width: 95%;
+    height: 45px;
+    margin-left: 2%;
+    /*border: 2px solid blue;*/
+    position: relative;
+}
+.W2>p{
+    top: 10px;
+    position: absolute;
+    color: lightslategrey;
+}
+.W2>img{
+    top: 10px;
+    left: 1250px;
+    /*border: 1px solid beige;*/
+    position: absolute;;
+}

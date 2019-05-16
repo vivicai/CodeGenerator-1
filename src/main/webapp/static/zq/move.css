@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#myDiv{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;     /*为圆*/
+    background: deepskyblue;
+
+            /*第二步：调用动画规则*/
+    -webkit-animation: mymove 5s linear 2s infinite alternate;
+    /*1动画名字 2持续时间 3把时间平均(匀速) 4等待时间 5无限运用 6反向运动（使轮流）*/
+}
+/*第一步：先写动画规则*/
+@-webkit-keyframes mymove {
+    from{
+        margin-left: 0;
+    }to{
+        margin-left: 1000px;
+         }
+ }
